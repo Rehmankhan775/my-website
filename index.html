@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scrap UAE - Best Price in Dubai</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* CSS Reset & Base Styles */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Arial', sans-serif; }
+        body { background-color: #0f172a; color: white; overflow-x: hidden; scroll-behavior: smooth; }
+
+        /* Modern Navigation */
+        nav {
+            background: rgba(15, 23, 42, 0.95);
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 2px solid #eab308;
+        }
+        .logo { font-size: 24px; font-weight: 900; color: #fff; }
+        .logo span { color: #eab308; }
+        
+        /* Hero Section with Animation */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?q=80&w=2070');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+        .hero h1 { 
+            font-size: 3.5rem; 
+            margin-bottom: 20px; 
+            animation: fadeInDown 1.5s ease;
+        }
+        .hero p { font-size: 1.2rem; color: #cbd5e1; margin-bottom: 30px; }
+        
+        /* Buttons */
+        .btn {
+            padding: 15px 35px;
+            background: #eab308;
+            color: #000;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 50px;
+            transition: 0.3s;
+            display: inline-block;
+        }
+        .btn:hover { transform: scale(1.1); background: #fff; }
+
+        /* Price Table Section */
+        .prices-section { padding: 80px 5%; background: #1e293b; text-align: center; }
+        .section-title { font-size: 2.5rem; margin-bottom: 50px; }
+        .section-title span { color: #eab308; }
+
+        .price-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .price-card {
+            background: #334155;
+            padding: 30px;
+            border-radius: 15px;
+            border-top: 5px solid #eab308;
+            transition: 0.4s;
+        }
+        .price-card:hover { transform: translateY(-10px); background: #475569; }
+        .price-card h3 { margin-bottom: 15px; font-size: 1.5rem; }
+        .amount { font-size: 2rem; font-weight: 800; color: #eab308; }
+
+        /* Services / Gallery */
+        .gallery { padding: 80px 5%; text-align: center; }
+        .grid-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+            margin-top: 30px;
+        }
+        .grid-gallery img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+            filter: grayscale(50%);
+            transition: 0.5s;
+        }
+        .grid-gallery img:hover { filter: grayscale(0%); transform: scale(1.03); }
+
+        /* WhatsApp Floating Button */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25d366;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 35px;
+            color: #fff;
+            text-decoration: none;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            z-index: 1000;
+            animation: pulse 2s infinite;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { box-shadow: 0 0 0 20px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+
+        /* Mobile View */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+            nav { padding: 15px 5%; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">SCRAP<span>UAE</span></div>
+        <a href="tel:+923181572018" style="color:#eab308; font-weight:bold; text-decoration:none;">
+            <i class="fa fa-phone"></i> CALL NOW
+        </a>
+    </nav>
+
+    <section class="hero">
+        <h1>BEST SCRAP BUYERS <br>IN <span style="color:#eab308">DUBAI & UAE</span></h1>
+        <p>Hum Copper, Aluminum, AC aur har tarah ka scrap achi qeemat mein khareedte hain.</p>
+        <a href="https://wa.me/923181572018" class="btn">GET FREE QUOTE</a>
+    </section>
+
+    <section class="prices-section" id="prices">
+        <h2 class="section-title">LIVE <span>SCRAP PRICES</span></h2>
+        <div class="price-grid">
+            <div class="price-card">
+                <h3>Copper (Tamba)</h3>
+                <div class="amount">28.00 AED</div>
+                <p>Per Kilogram</p>
+            </div>
+            <div class="price-card">
+                <h3>Aluminum</h3>
+                <div class="amount">4.50 AED</div>
+                <p>Per Kilogram</p>
+            </div>
+            <div class="price-card">
+                <h3>Used AC (1.5 Ton)</h3>
+                <div class="amount">450 - 800 AED</div>
+                <p>Per Unit</p>
+            </div>
+            <div class="price-card">
+                <h3>Iron (Loha)</h3>
+                <div class="amount">1.10 AED</div>
+                <p>Per Kilogram</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="gallery">
+        <h2 class="section-title">OUR <span>LATEST WORK</span></h2>
+        <div class="grid-gallery">
+            <img src="https://images.unsplash.com/photo-1558383331-f520f2888351?q=80&w=500" alt="Scrap 1">
+            <img src="https://images.unsplash.com/photo-1516937941344-00b4e0337589?q=80&w=500" alt="Scrap 2">
+            <img src="https://images.unsplash.com/photo-1621252179027-94459d278660?q=80&w=500" alt="Scrap 3">
+            <img src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?q=80&w=500" alt="Scrap 4">
+        </div>
+    </section>
+
+    <section style="background: #000; padding: 50px 5%; text-align: center;">
+        <h2 style="margin-bottom: 20px;">Contact Us Anytime</h2>
+        <p style="font-size: 1.5rem; color: #eab308; font-weight: bold;">
+            <i class="fa fa-phone"></i> +92 318 1572018
+        </p>
+        <p style="margin-top: 10px; color: #64748b;">Dubai, Sharjah, Ajman, Abu Dhabi - All over UAE</p>
+    </section>
+
+    <a href="https://wa.me/923181572018?text=Hello%20I%20have%20scrap%20material%20to%20sell" class="whatsapp-btn" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <footer style="padding: 20px; text-align: center; font-size: 12px; color: #475569;">
+        &copy; 2026 ScrapUAE.com | All Rights Reserved.
+    </footer>
+
+</body>
+</html>
