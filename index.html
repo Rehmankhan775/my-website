@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SotoVera Family LLC | Elite Dispatch & Logistics</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=Orbitron:wght@900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root { --primary: #0066FF; --bg: #ffffff; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--bg); color: #1e293b; scroll-behavior: smooth; }
+        .font-orbit { font-family: 'Orbitron', sans-serif; }
+
+        /* Floating Animation */
+        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
+        .floating { animation: float 5s ease-in-out infinite; }
+
+        /* Glassmorphism Cards */
+        .glass-card { 
+            background: rgba(255, 255, 255, 0.9); 
+            backdrop-filter: blur(10px); 
+            border: 1px solid rgba(0, 102, 255, 0.1); 
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.04);
+            border-radius: 35px;
+            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .glass-card:hover { transform: translateY(-10px); border-color: var(--primary); }
+
+        .blue-gradient { background: linear-gradient(135deg, #0066FF 0%, #4F46E5 100%); }
+        .blue-text { color: #0066FF; }
+
+        /* Custom Form Inputs */
+        input, select { 
+            background: #f8fafc; 
+            border: 1px solid #e2e8f0; 
+            padding: 1.2rem; 
+            border-radius: 18px; 
+            outline: none; 
+            width: 100%;
+            transition: 0.3s; 
+        }
+        input:focus { border-color: #0066FF; box-shadow: 0 0 0 4px rgba(0, 102, 255, 0.1); }
+
+        /* Image Mask for Truck Photos */
+        .truck-mask { border-radius: 40px; box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1); }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+
+<nav class="fixed w-full z-50 bg-white/70 backdrop-blur-xl border-b border-gray-100 h-24 flex items-center px-8 justify-between">
+    <div class="flex items-center gap-3">
+        <div class="w-10 h-10 blue-gradient rounded-xl flex items-center justify-center text-white font-black italic shadow-lg">S</div>
+        <div class="text-xl font-extrabold tracking-tighter">SOTOVERA <span class="blue-text">FAMILY</span></div>
+    </div>
+    <div class="hidden lg:flex gap-10 text-[10px] font-black uppercase tracking-widest text-slate-400">
+        <a href="#home" class="hover:text-blue-600 transition">Fleet</a>
+        <a href="#tools" class="hover:text-blue-600 transition">Operational Tools</a>
+        <a href="#reviews" class="hover:text-blue-600 transition">Reviews</a>
+        <a href="#register" class="hover:text-blue-600 transition">Register</a>
+    </div>
+    <a href="https://wa.me/923099790700" class="blue-gradient text-white px-8 py-3 rounded-full font-bold text-[10px] uppercase tracking-widest shadow-xl shadow-blue-500/20">Contact Hub</a>
+</nav>
+
+<section id="home" class="pt-48 pb-24 px-8 text-center bg-[radial-gradient(circle_at_top_right,rgba(0,102,255,0.05),transparent)]">
+    <div class="max-w-5xl mx-auto floating">
+        <span class="inline-block px-4 py-1 bg-blue-50 text-blue-600 rounded-full text-[10px] font-black uppercase tracking-[0.3em] mb-8 border border-blue-100">LLC Registered Operations 2026</span>
+        <h1 class="text-6xl md:text-[100px] font-black tracking-tighter leading-[0.85] mb-10">
+            Driven by <span class="blue-text italic">Integrity,</span> <br> Powered by Tech.
+        </h1>
+        <p class="text-slate-500 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-12">
+            SotoVera Family LLC provides elite-level dispatching to maximize your RPM. We handle the paperwork; you handle the road.
+        </p>
+        <div class="flex flex-wrap gap-5 justify-center">
+            <a href="#register" class="blue-gradient text-white px-12 py-5 rounded-2xl font-black uppercase text-xs tracking-widest hover:scale-105 transition shadow-2xl">Start Activation</a>
+            <a href="#tools" class="bg-slate-100 text-slate-700 px-12 py-5 rounded-2xl font-black uppercase text-xs tracking-widest hover:bg-slate-200 transition">View Dashboard</a>
+        </div>
+    </div>
+</section>
+
+<section class="py-10">
+    <div class="flex gap-8 justify-center px-8">
+        <img src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?q=80&w=600" class="w-1/4 h-80 object-cover truck-mask floating" style="animation-delay: 1s">
+        <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=600" class="w-1/4 h-[400px] object-cover truck-mask floating">
+        <img src="https://images.unsplash.com/photo-1501700489910-fb3a7eba0d73?q=80&w=600" class="w-1/4 h-80 object-cover truck-mask floating" style="animation-delay: 0.5s">
+    </div>
+</section>
+
+<section id="tools" class="py-32 bg-slate-50/50 px-8">
+    <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-10">
+        <div class="glass-card p-12">
+            <div class="flex items-center gap-4 mb-10">
+                <i class="fas fa-calculator text-3xl blue-text"></i>
+                <h3 class="text-2xl font-black">Revenue <span class="blue-text">Estimator</span></h3>
+            </div>
+            <div class="space-y-6">
+                <div>
+                    <label class="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2 block">Equipment Type</label>
+                    <select id="calcType" class="font-bold text-slate-700">
+                        <option value="2.90">Dry Van ($2.90/mi)</option>
+                        <option value="3.80">Reefer ($3.80/mi)</option>
+                        <option value="4.50">Flatbed ($4.50/mi)</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2 block">Total Distance (Miles)</label>
+                    <input type="number" id="calcMiles" placeholder="e.g. 1500" class="font-bold">
+                </div>
+                <button onclick="calculateRevenue()" class="w-full blue-gradient text-white py-5 rounded-2xl font-black uppercase text-xs tracking-widest shadow-xl">Generate Gross Quote</button>
+                <div id="resDiv" class="hidden mt-8 p-10 bg-blue-50 rounded-[30px] border border-blue-100 text-center animate-bounce-short">
+                    <p class="text-[10px] font-black text-blue-400 uppercase mb-2">Estimated Total Trip Pay</p>
+                    <h4 id="resVal" class="text-6xl font-black blue-text">$0.00</h4>
+                </div>
+            </div>
+        </div>
+
+        <div class="glass-card p-12">
+            <div class="flex items-center gap-4 mb-10">
+                <i class="fas fa-satellite-dish text-3xl blue-text"></i>
+                <h3 class="text-2xl font-black">Load <span class="blue-text">Terminal</span></h3>
+            </div>
+            <div class="space-y-4">
+                <div class="flex gap-4">
+                    <input type="text" placeholder="Origin" class="text-sm font-bold">
+                    <input type="text" placeholder="Destination" class="text-sm font-bold">
+                </div>
+                <button onclick="document.getElementById('mockBoard').classList.remove('hidden')" class="w-full bg-slate-900 text-white py-5 rounded-2xl font-black uppercase text-xs tracking-widest">Search Live Board</button>
+                <div id="mockBoard" class="hidden space-y-4 pt-6">
+                    <div class="p-5 border border-slate-100 rounded-2xl flex justify-between items-center hover:bg-white transition">
+                        <div><p class="font-black text-sm text-slate-800">Dallas, TX → Chicago, IL</p><p class="text-[10px] text-slate-400 font-bold uppercase">Reefer | 920 mi</p></div>
+                        <div class="text-right"><p class="font-black blue-text">$3,680</p><span class="text-[9px] bg-green-100 text-green-600 px-2 py-0.5 rounded font-black">High Yield</span></div>
+                    </div>
+                    <div class="p-5 border border-slate-100 rounded-2xl flex justify-between items-center hover:bg-white transition">
+                        <div><p class="font-black text-sm text-slate-800">Phoenix, AZ → Seattle, WA</p><p class="text-[10px] text-slate-400 font-bold uppercase">Dry Van | 1400 mi</p></div>
+                        <div class="text-right"><p class="font-black blue-text">$4,060</p><span class="text-[9px] bg-slate-100 text-slate-400 px-2 py-0.5 rounded font-black">Standard</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="reviews" class="py-32 px-8">
+    <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-20">
+            <h3 class="text-4xl font-black">Carrier <span class="blue-text">Success Stories</span></h3>
+            <p class="text-slate-400 mt-3">Join hundreds of satisfied owner-operators.</p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="glass-card p-10 floating" style="animation-delay: 0.5s">
+                <div class="text-yellow-400 mb-6 text-sm"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <p class="text-slate-600 italic mb-8 leading-relaxed">"SotoVera Family is the most professional dispatch team I've ever worked with. Clean, fast, and high RPM."</p>
+                <div class="flex items-center gap-4"><div class="w-12 h-12 blue-gradient rounded-full flex items-center justify-center font-bold text-white">AK</div><span class="text-xs font-black uppercase text-slate-800">Alex K. (Owner-Op)</span></div>
+            </div>
+            <div class="glass-card p-10 floating" style="animation-delay: 1s">
+                <div class="text-yellow-400 mb-6 text-sm"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <p class="text-slate-600 italic mb-8 leading-relaxed">"The technology here is unmatched. I love the transparency and the live load terminal tracking."</p>
+                <div class="flex items-center gap-4"><div class="w-12 h-12 bg-indigo-600 rounded-full flex items-center justify-center font-bold text-white">SM</div><span class="text-xs font-black uppercase text-slate-800">Sarah M. (Fleet Owner)</span></div>
+            </div>
+            <div class="glass-card p-10 floating" style="animation-delay: 1.5s">
+                <div class="text-yellow-400 mb-6 text-sm"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <p class="text-slate-600 italic mb-8 leading-relaxed">"24/7 support means I'm never alone on the road. Best decision for my business growth."</p>
+                <div class="flex items-center gap-4"><div class="w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center font-bold text-white">TH</div><span class="text-xs font-black uppercase text-slate-800">Tom H. (Driver)</span></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="register" class="py-32 bg-slate-50/50 px-8">
+    <div class="max-w-4xl mx-auto glass-card p-12 md:p-20 shadow-blue-500/10 border-blue-600/10">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-black">Join The <span class="blue-text">Family</span></h2>
+            <p class="text-slate-400 mt-4">Secure your spot in the elite fleet today.</p>
+        </div>
+        <form id="waForm" class="grid md:grid-cols-2 gap-8">
+            <div class="space-y-2"><label class="text-[10px] font-black text-slate-500 uppercase tracking-widest">Full Name / Company</label><input type="text" id="waName" placeholder="Elite Logistics LLC" required></div>
+            <div class="space-y-2"><label class="text-[10px] font-black text-slate-500 uppercase tracking-widest">Phone Number</label><input type="tel" id="waPhone" placeholder="+1 (000) 000-0000" required></div>
+            <div class="space-y-2"><label class="text-[10px] font-black text-slate-500 uppercase tracking-widest">MC# / DOT#</label><input type="text" id="waMC" placeholder="MC-000000" required></div>
+            <div class="space-y-2"><label class="text-[10px] font-black text-slate-500 uppercase tracking-widest">Equipment Type</label><select id="waEquip"><option>Dry Van</option><option>Reefer</option><option>Flatbed</option><option>Power Only</option></select></div>
+            <button type="button" onclick="sendToWhatsApp()" class="md:col-span-2 blue-gradient text-white py-6 rounded-2xl font-black uppercase tracking-widest text-xs shadow-2xl hover:scale-[1.01] transition active:scale-95">
+                <i class="fab fa-whatsapp mr-2"></i> Register via WhatsApp
+            </button>
+        </form>
+    </div>
+</section>
+
+<footer class="py-20 bg-white border-t border-slate-100 text-center">
+    <div class="text-2xl font-black tracking-tighter mb-6">SOTOVERA <span class="blue-text">FAMILY</span></div>
+    <div class="flex justify-center gap-12 text-[10px] font-black uppercase tracking-widest text-slate-400 mb-10">
+        <a href="#home">Home</a><a href="#tools">Terminal</a><a href="#reviews">Reviews</a><a href="#register">Register</a>
+    </div>
+    <p class="text-[9px] text-slate-300 font-bold tracking-[1.5em] uppercase">SotoVera Family LLC © 2026 • Premium Logistics SaaS</p>
+</footer>
+
+<script>
+    function calculateRevenue() {
+        const rate = parseFloat(document.getElementById('calcType').value);
+        const miles = parseFloat(document.getElementById('calcMiles').value);
+        if(miles > 0) {
+            const total = (rate * miles).toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+            document.getElementById('resVal').innerText = total;
+            document.getElementById('resDiv').classList.remove('hidden');
+        } else { alert("Please enter mileage."); }
+    }
+
+    function sendToWhatsApp() {
+        const name = document.getElementById('waName').value;
+        const phone = document.getElementById('waPhone').value;
+        const mc = document.getElementById('waMC').value;
+        const equip = document.getElementById('waEquip').value;
+        if(!name || !phone || !mc) { alert("Please fill all fields."); return; }
+        
+        const adminPhone = "923099790700";
+        const message = `*NEW CARRIER REGISTRATION*%0A*Company:* ${name}%0A*Phone:* ${phone}%0A*MC#:* ${mc}%0A*Equipment:* ${equip}`;
+        window.open(`https://wa.me/${adminPhone}?text=${message}`, '_blank');
+    }
+</script>
+
+</body>
+</html>
