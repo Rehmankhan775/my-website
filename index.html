@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SotoVera | Enterprise Logistics Terminal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        :root { --vision-blue: #0066ff; --deep-dark: #020617; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--deep-dark); color: white; overflow-x: hidden; }
+        
+        /* Premium Background Mesh */
+        .mesh-bg {
+            background-color: #020617;
+            background-image: radial-gradient(at 0% 0%, rgba(0, 102, 255, 0.15) 0px, transparent 50%),
+                              radial-gradient(at 100% 100%, rgba(0, 102, 255, 0.1) 0px, transparent 50%);
+        }
+
+        /* Glassmorphism Cards */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-panel:hover {
+            background: rgba(255, 255, 255, 0.07);
+            border: 1px solid rgba(0, 102, 255, 0.4);
+            transform: translateY(-10px);
+        }
+
+        /* 3D Flip Card Effect */
+        .flip-card { perspective: 1000px; height: 300px; }
+        .flip-card-inner { position: relative; width: 100%; height: 100%; transition: transform 0.8s; transform-style: preserve-3d; }
+        .flip-card:hover .flip-card-inner { transform: rotateY(180deg); }
+        .flip-card-front, .flip-card-back { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: 24px; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 2rem; }
+        .flip-card-front { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); }
+        .flip-card-back { background: var(--vision-blue); color: white; transform: rotateY(180deg); text-align: center; }
+
+        .truck-overlay { mask-image: linear-gradient(to bottom, black 50%, transparent 100%); }
+        .btn-glow { box-shadow: 0 0 20px rgba(0, 102, 255, 0.4); }
+    </style>
+</head>
+<body class="mesh-bg">
+
+<nav class="sticky top-0 z-[1000] bg-slate-950/60 backdrop-blur-xl border-b border-white/10 py-5 px-6 md:px-20 flex justify-between items-center">
+    <div class="flex items-center gap-3">
+        <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center font-black italic shadow-lg shadow-blue-500/30">S</div>
+        <div>
+            <h2 class="text-lg font-black tracking-tighter uppercase leading-none">SotoVera</h2>
+            <p class="text-[9px] font-bold text-blue-500 tracking-[3px] uppercase">Family Terminal</p>
+        </div>
+    </div>
+    <div class="flex gap-4">
+        <button onclick="sendWA('I am a new driver to register in your company')" class="btn-glow bg-blue-600 px-6 py-2.5 rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-blue-700 transition">Initialize Setup</button>
+    </div>
+</nav>
+
+<section class="relative min-h-[85vh] flex flex-col justify-center items-center text-center px-6">
+    <div class="absolute inset-0 z-0 opacity-20 truck-overlay">
+        <img src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?q=80&w=2000" class="w-full h-full object-cover" alt="Elite Trucking">
+    </div>
+
+    <div class="relative z-10 max-w-5xl" data-aos="zoom-out">
+        <h4 class="text-blue-500 font-bold uppercase tracking-[8px] text-[10px] mb-6">Autonomous Logistics Ecosystem</h4>
+        <h1 class="text-6xl md:text-9xl font-black leading-none mb-8">
+            MOVE <br> <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-700">INTELLIGENT.</span>
+        </h1>
+        <p class="text-slate-400 text-lg md:text-xl max-w-2xl mx-auto mb-12 font-light">
+            SotoVera Family provides a high-performance terminal for owner-operators to scale their revenue through precision load management.
+        </p>
+        <button onclick="document.getElementById('services').scrollIntoView()" class="bg-white/5 hover:bg-white/10 px-12 py-4 rounded-2xl border border-white/10 transition font-bold text-sm">Launch Dashboard</button>
+    </div>
+</section>
+
+<section class="py-10 px-6 md:px-20 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-7xl mx-auto">
+    <div class="glass-panel p-8 text-center" data-aos="fade-up">
+        <p class="text-[10px] text-blue-500 font-bold uppercase mb-2">Active Fleet</p>
+        <h3 class="text-4xl font-black">240+</h3>
+    </div>
+    <div class="glass-panel p-8 text-center" data-aos="fade-up" data-aos-delay="100">
+        <p class="text-[10px] text-blue-500 font-bold uppercase mb-2">Load Success</p>
+        <h3 class="text-4xl font-black">98.4%</h3>
+    </div>
+    <div class="glass-panel p-8 text-center" data-aos="fade-up" data-aos-delay="200">
+        <p class="text-[10px] text-blue-500 font-bold uppercase mb-2">Avg Market RPM</p>
+        <h3 class="text-4xl font-black">$3.42</h3>
+    </div>
+    <div class="glass-panel p-8 text-center" data-aos="fade-up" data-aos-delay="300">
+        <p class="text-[10px] text-blue-500 font-bold uppercase mb-2">Support</p>
+        <h3 class="text-4xl font-black">24/7</h3>
+    </div>
+</section>
+
+<section id="services" class="py-32 px-6 md:px-20">
+    <div class="text-center mb-24">
+        <h2 class="text-4xl md:text-6xl font-black mb-6">Operational <span class="text-blue-500">Excellence</span></h2>
+        <p class="text-slate-500 font-bold uppercase tracking-[4px] text-[10px]">Hover cards to see terminal features</p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        <div class="flip-card" data-aos="fade-right">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <i class="fas fa-microchip text-4xl text-blue-500 mb-6"></i>
+                    <h3 class="text-xl font-bold uppercase">Dispatching</h3>
+                </div>
+                <div class="flip-card-back">
+                    <p class="text-sm">High-RPM load matching, direct broker access, and 24/7 route optimization.</p>
+                </div>
+            </div>
+        </div>
+        <div class="flip-card" data-aos="fade-up">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <i class="fas fa-shield-alt text-4xl text-blue-500 mb-6"></i>
+                    <h3 class="text-xl font-bold uppercase">Compliance</h3>
+                </div>
+                <div class="flip-card-back">
+                    <p class="text-sm">ELD monitoring, DOT audit support, and proactive safety management.</p>
+                </div>
+            </div>
+        </div>
+        <div class="flip-card" data-aos="fade-left">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <i class="fas fa-wallet text-4xl text-blue-500 mb-6"></i>
+                    <h3 class="text-xl font-bold uppercase">Billing</h3>
+                </div>
+                <div class="flip-card-back">
+                    <p class="text-sm">Rapid invoicing, factoring integration, and transparent weekly settlements.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-32 px-6 md:px-20 bg-slate-950/40">
+    <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-20 items-center">
+        <div class="glass-panel p-10" data-aos="fade-right">
+            <h3 class="text-xl font-bold mb-8 flex items-center gap-3">
+                <span class="w-3 h-3 bg-green-500 rounded-full animate-pulse"></span>
+                Market Rate Index
+            </h3>
+            <canvas id="marketChart" height="200"></canvas>
+        </div>
+
+        <div class="glass-panel p-10 border-blue-500/20" data-aos="fade-left">
+            <h3 class="text-blue-500 text-[10px] font-bold mb-10 tracking-[5px] uppercase">RPM Estimator Tool</h3>
+            <div class="space-y-6">
+                <input type="number" id="loadVal" placeholder="Gross Pay ($)" class="w-full bg-white/5 border border-white/10 rounded-xl p-5 text-white outline-none focus:border-blue-500 transition">
+                <input type="number" id="loadDist" placeholder="Total Miles" class="w-full bg-white/5 border border-white/10 rounded-xl p-5 text-white outline-none focus:border-blue-500 transition">
+                <button onclick="calculateRPM()" class="w-full bg-blue-600 py-5 rounded-xl font-black text-xs uppercase tracking-widest shadow-lg shadow-blue-500/20">Analyze Potential</button>
+                <div class="mt-4 p-8 bg-blue-600/10 rounded-2xl text-center border border-blue-500/20">
+                    <p class="text-[9px] text-blue-400 uppercase font-black mb-1">Projected RPM</p>
+                    <h4 id="rpmOut" class="text-5xl font-black">$0.00</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="py-20 text-center border-t border-white/5">
+    <h2 class="text-3xl font-black uppercase mb-2">SotoVera <span class="text-blue-500">Family</span></h2>
+    <p class="text-[10px] text-slate-500 font-bold uppercase tracking-[1em] mb-10">Logistics Terminal</p>
+    <div class="flex justify-center gap-8 text-2xl mb-12">
+        <a href="https://wa.me/923099790700" class="hover:text-blue-500 transition"><i class="fab fa-whatsapp"></i></a>
+        <a href="#" class="hover:text-blue-500 transition"><i class="fab fa-linkedin"></i></a>
+    </div>
+    <p class="text-[9px] text-slate-600 font-bold uppercase tracking-widest">© 2026 Enterprise Logistics Terminal</p>
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init({ duration: 1000, once: true });
+    function sendWA(msg) { window.open(`https://wa.me/923099790700?text=${encodeURIComponent(msg)}`, '_blank'); }
+    function calculateRPM() {
+        const val = document.getElementById('loadVal').value;
+        const dist = document.getElementById('loadDist').value;
+        if(val && dist > 0) { document.getElementById('rpmOut').innerText = "$" + (val / dist).toFixed(2); }
+    }
+    const ctx = document.getElementById('marketChart').getContext('2d');
+    new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5'],
+            datasets: [{
+                label: 'Market Avg',
+                data: [2.8, 3.1, 2.9, 3.4, 3.2],
+                borderColor: '#0066ff',
+                backgroundColor: 'rgba(0, 102, 255, 0.1)',
+                fill: true,
+                tension: 0.4,
+                pointRadius: 0
+            }]
+        },
+        options: {
+            plugins: { legend: { display: false } },
+            scales: { y: { display: false }, x: { grid: { display: false }, ticks: { color: '#64748b' } } }
+        }
+    });
+</script>
+</body>
+</html>
