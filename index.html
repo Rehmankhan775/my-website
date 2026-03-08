@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vision Hub | Elite Logistics & Dispatch Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #050505; color: #ffffff; scroll-behavior: smooth; overflow-x: hidden; }
+        .gold-gradient { background: linear-gradient(90deg, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .gold-bg { background: linear-gradient(135deg, #bf953f 0%, #aa771c 100%); }
+        .glass-card { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(15px); border: 1px solid rgba(191, 149, 63, 0.15); border-radius: 24px; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        .glass-card:hover { border-color: #bf953f; transform: translateY(-12px); box-shadow: 0 25px 50px -12px rgba(191, 149, 63, 0.2); }
+        .hero-zoom { animation: zoom-effect 30s infinite alternate ease-in-out; }
+        @keyframes zoom-effect { from { transform: scale(1); } to { transform: scale(1.2); } }
+        .tab-content { display: none; animation: slideUp 0.6s ease forwards; }
+        .tab-content.active { display: block; }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body>
+
+<nav class="fixed w-full z-50 bg-black/80 backdrop-blur-xl border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-6 h-24 flex justify-between items-center">
+        <div class="flex items-center gap-3">
+            <div class="w-12 h-12 gold-bg rounded-xl flex items-center justify-center text-black font-black shadow-lg">VH</div>
+            <span class="text-2xl font-extrabold tracking-tighter uppercase">Vision<span class="gold-gradient">Hub</span></span>
+        </div>
+        <div class="hidden lg:flex space-x-10 text-[10px] font-black uppercase tracking-[0.2em]">
+            <a href="#home" class="hover:text-amber-400 transition">Home</a>
+            <a href="#onboarding" class="hover:text-amber-400 transition">Register</a>
+            <a href="#testimonials" class="hover:text-amber-400 transition">Reviews</a>
+            <a href="#dashboard" class="hover:text-amber-400 transition">Tracker</a>
+            <a href="#contact" class="hover:text-amber-400 transition">Contact</a>
+        </div>
+        <a href="mailto:abdurkhantcs123@gmail.com" class="gold-bg text-black px-8 py-3 rounded-full font-black text-[10px] uppercase tracking-widest hover:scale-105 transition shadow-xl">
+            Book Now
+        </a>
+    </div>
+</nav>
+
+<section id="home" class="relative h-screen flex items-center overflow-hidden">
+    <div class="absolute inset-0 z-0">
+        <img src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?q=80&w=2000" class="w-full h-full object-cover hero-zoom" alt="Logistics">
+        <div class="absolute inset-0 bg-gradient-to-r from-black via-black/85 to-transparent"></div>
+    </div>
+    <div class="relative z-10 max-w-7xl mx-auto px-6 w-full">
+        <div class="max-w-3xl space-y-8">
+            <div class="inline-block py-2 px-4 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-500 text-[10px] font-black uppercase tracking-[0.5em]">
+                Verified Dispatch Network 2026
+            </div>
+            <h1 class="text-7xl lg:text-9xl font-black leading-[0.9] tracking-tighter">
+                LOADS. <br> <span class="gold-gradient italic">UNLIMITED.</span>
+            </h1>
+            <p class="text-gray-300 text-xl max-w-xl border-l-4 border-amber-600 pl-8 leading-relaxed italic">
+                "Stop chasing brokers. Let Vision Hub bring the high-paying market to your dashboard."
+            </p>
+            <div class="flex flex-wrap gap-5 pt-4">
+                <a href="#onboarding" class="bg-white text-black px-12 py-6 rounded-2xl font-black uppercase text-sm hover:bg-amber-400 transition shadow-2xl">Start Onboarding</a>
+                <a href="https://wa.me/03099790700" class="border border-white/20 px-12 py-6 rounded-2xl font-black uppercase text-sm hover:bg-white/10 transition flex items-center gap-3">
+                    <i class="fab fa-whatsapp text-green-500 text-xl"></i> WhatsApp Line
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="onboarding" class="py-32 bg-[#080808]">
+    <div class="max-w-4xl mx-auto px-6">
+        <div class="text-center mb-16">
+            <h2 class="text-5xl font-black mb-4 uppercase">Carrier <span class="gold-gradient">Setup</span></h2>
+            <p class="text-gray-500 text-xs font-bold uppercase tracking-widest">Join our elite fleet today</p>
+        </div>
+        <div class="glass-card p-10 md:p-16">
+            <form action="mailto:abdurkhantcs123@gmail.com" method="post" enctype="multipart/form-data" class="space-y-6">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <input type="text" placeholder="Owner Name" class="w-full bg-black border border-white/10 rounded-xl p-4 outline-none focus:border-amber-500 text-sm">
+                    <input type="text" placeholder="MC# / DOT#" class="w-full bg-black border border-white/10 rounded-xl p-4 outline-none focus:border-amber-500 text-sm">
+                </div>
+                <div class="grid md:grid-cols-3 gap-4">
+                    <div class="p-4 border border-white/5 bg-black/40 rounded-xl text-center">
+                        <label class="block text-[10px] text-gray-500 uppercase font-bold mb-2">MC Authority</label>
+                        <input type="file" class="hidden" id="f1"><button type="button" onclick="document.getElementById('f1').click()" class="text-amber-500 text-xs font-bold underline">Upload PDF</button>
+                    </div>
+                    <div class="p-4 border border-white/5 bg-black/40 rounded-xl text-center">
+                        <label class="block text-[10px] text-gray-500 uppercase font-bold mb-2">Insurance (COI)</label>
+                        <input type="file" class="hidden" id="f2"><button type="button" onclick="document.getElementById('f2').click()" class="text-amber-500 text-xs font-bold underline">Upload PDF</button>
+                    </div>
+                    <div class="p-4 border border-white/5 bg-black/40 rounded-xl text-center">
+                        <label class="block text-[10px] text-gray-500 uppercase font-bold mb-2">W9 Form</label>
+                        <input type="file" class="hidden" id="f3"><button type="button" onclick="document.getElementById('f3').click()" class="text-amber-500 text-xs font-bold underline">Upload PDF</button>
+                    </div>
+                </div>
+                <button type="submit" class="w-full gold-bg text-black font-black py-5 rounded-2xl uppercase tracking-widest hover:opacity-90">Submit Documents</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<section id="testimonials" class="py-32 bg-[#050505] relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+        <h2 class="text-5xl font-black text-center mb-20 uppercase">Driver <span class="gold-gradient">Success Stories</span></h2>
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="glass-card p-10 flex flex-col items-center text-center">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200" class="w-20 h-20 rounded-full border-2 border-amber-500 mb-6 object-cover" alt="Driver">
+                <div class="flex text-amber-500 mb-4 text-xs"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <p class="text-gray-400 italic mb-6">"Vision Hub ne meri truck ki earning 40% tak barha di hai. Ab mujhe loads ki fikar nahi hoti!"</p>
+                <h4 class="font-bold">John D.</h4>
+                <p class="text-[10px] text-amber-500 font-bold uppercase">Owner Operator (USA)</p>
+            </div>
+            <div class="glass-card p-10 flex flex-col items-center text-center">
+                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=200" class="w-20 h-20 rounded-full border-2 border-amber-500 mb-6 object-cover" alt="Driver">
+                <div class="flex text-amber-500 mb-4 text-xs"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <p class="text-gray-400 italic mb-6">"Best dispatch service! Documentation aur payments ka process bohat hi smooth aur fast hai."</p>
+                <h4 class="font-bold">Malik Waseem</h4>
+                <p class="text-[10px] text-amber-500 font-bold uppercase">Fleet Manager (PK)</p>
+            </div>
+            <div class="glass-card p-10 flex flex-col items-center text-center">
+                <img src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?q=80&w=200" class="w-20 h-20 rounded-full border-2 border-amber-500 mb-6 object-cover" alt="Driver">
+                <div class="flex text-amber-500 mb-4 text-xs"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <p class="text-gray-400 italic mb-6">"Professional team aur great rates. I highly recommend Vision Hub to every truck owner."</p>
+                <h4 class="font-bold">Robert S.</h4>
+                <p class="text-[10px] text-amber-500 font-bold uppercase">Reefer Specialist</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="dashboard" class="py-32 bg-[#080808]">
+    <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-10">
+        <div class="p-12 glass-card">
+            <h3 class="text-2xl font-bold mb-8 uppercase tracking-widest"><i class="fas fa-bolt text-amber-500 mr-2"></i> Fast Quote</h3>
+            <div class="space-y-6">
+                <select id="truckType" class="w-full bg-black border border-white/10 rounded-xl p-4 text-sm outline-none focus:border-amber-500">
+                    <option value="2.8">Dry Van ($2.80/mi)</option>
+                    <option value="3.8">Reefer ($3.80/mi)</option>
+                    <option value="4.5">Flatbed ($4.50/mi)</option>
+                </select>
+                <input type="number" id="miles" placeholder="Enter Total Miles" class="w-full bg-black border border-white/10 rounded-xl p-4 text-sm outline-none focus:border-amber-500">
+                <button onclick="calculateRate()" class="w-full gold-bg text-black font-black py-4 rounded-xl uppercase text-xs tracking-widest shadow-lg">Calculate Earnings</button>
+                <div id="resDiv" class="hidden mt-6 p-6 bg-black border border-amber-500/30 rounded-3xl text-center">
+                    <p class="text-[10px] text-gray-500 font-bold uppercase mb-2 tracking-widest">Estimated Gross Pay</p>
+                    <h4 id="price" class="text-5xl font-black gold-gradient">$0.00</h4>
+                </div>
+            </div>
+        </div>
+        <div class="p-12 glass-card">
+            <h3 class="text-2xl font-bold mb-8 uppercase tracking-widest"><i class="fas fa-crosshairs text-amber-500 mr-2"></i> Live Track</h3>
+            <div class="space-y-6">
+                <input type="text" id="loadId" placeholder="Enter Load ID (e.g. VH-7860)" class="w-full bg-black border border-white/10 rounded-xl p-4 text-sm outline-none focus:border-amber-500">
+                <button onclick="trackLoad()" class="w-full bg-white text-black font-black py-4 rounded-xl uppercase text-xs tracking-widest shadow-lg">Check Status</button>
+                <div id="trackUI" class="hidden pt-10 space-y-6">
+                    <div class="h-2 w-full bg-white/5 rounded-full overflow-hidden"><div id="bar" class="h-full gold-bg transition-all duration-1000" style="width: 10%"></div></div>
+                    <div class="flex justify-between text-[10px] font-black uppercase text-gray-500"><span>Dispatched</span><span>In Transit</span><span>Delivered</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="py-20 bg-black border-t border-white/5 text-center">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-4xl font-black mb-10">VISION<span class="gold-gradient">HUB</span></div>
+        <div class="flex flex-wrap justify-center gap-12 mb-12 text-[10px] font-black uppercase tracking-[0.3em] text-gray-400">
+            <a href="#home" class="hover:text-amber-500 transition">Fleet</a>
+            <a href="#onboarding" class="hover:text-amber-400 transition">Register</a>
+            <a href="#testimonials" class="hover:text-amber-500 transition">Reviews</a>
+            <a href="#dashboard" class="hover:text-amber-400 transition">Ops Dashboard</a>
+            <a href="mailto:abdurkhantcs123@gmail.com" class="hover:text-amber-500 transition">Contact Support</a>
+        </div>
+        <div class="h-[1px] w-40 bg-amber-500 mx-auto mb-10 opacity-30"></div>
+        <p class="text-[10px] text-gray-600 font-black uppercase tracking-[0.4em]">© 2026 Vision Hub Logistics | Premium Dispatch Operations</p>
+    </div>
+</footer>
+
+<script>
+    function calculateRate() {
+        const r = document.getElementById('truckType').value;
+        const m = document.getElementById('miles').value;
+        if(m > 0) {
+            document.getElementById('price').innerText = (r * m).toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+            document.getElementById('resDiv').classList.remove('hidden');
+        }
+    }
+    function trackLoad() {
+        if(document.getElementById('loadId').value.length > 2) {
+            document.getElementById('trackUI').classList.remove('hidden');
+            setTimeout(() => { document.getElementById('bar').style.width = "85%"; }, 200);
+        }
+    }
+</script>
+</body>
+</html>
