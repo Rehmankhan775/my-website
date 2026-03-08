@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SotoVera Family | Premium Truck Dispatch & Logistics</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #050505; color: #e5e5e5; scroll-behavior: smooth; overflow-x: hidden; }
+        
+        /* Premium Styling (No boring white blocks!) */
+        .gold-gradient-text { background: linear-gradient(90deg, #bf953f, #fcf6ba, #aa771c); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .gold-bg { background: linear-gradient(135deg, #bf953f 0%, #aa771c 100%); }
+        .glass-card { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(20px); border: 1px solid rgba(191, 149, 63, 0.1); }
+
+        /* Smooth Scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #0a0a0a; }
+        ::-webkit-scrollbar-thumb { background: #bf953f; border-radius: 10px; }
+
+        /* Hero Animation (Ken Burns) */
+        @keyframes kenburns {
+            0% { transform: scale(1) translate(0, 0); }
+            100% { transform: scale(1.15) translate(-10px, -5px); }
+        }
+        .animate-kenburns { animation: kenburns 30s infinite alternate linear; }
+
+        /* Functional Tabs Logic */
+        .tab-content { display: none; animation: fadeIn 0.6s ease; }
+        .tab-content.active { display: block; }
+        .tab-btn.active { border-color: #bf953f; background: rgba(191, 149, 63, 0.15); color: #fcf6ba; }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body>
+
+<nav class="fixed w-full z-50 bg-black/70 backdrop-blur-xl border-b border-white/5">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+        <div class="text-2xl font-extrabold tracking-tighter text-white">
+            SotoVera<span class="gold-gradient-text">Family</span>
+        </div>
+        <div class="hidden md:flex space-x-10 text-[11px] font-bold uppercase tracking-widest text-gray-400">
+            <a href="#home" class="hover:text-amber-400 transition">Fleet</a>
+            <a href="#expertise" class="hover:text-amber-400 transition">Expertise</a>
+            <a href="#dashboard" class="hover:text-amber-400 transition">Live Ops</a>
+            <a href="#contact" class="hover:text-amber-400 transition">Contact</a>
+        </div>
+        <a href="https://wa.me/03099790700" class="gold-bg text-black px-6 py-2.5 rounded-full font-bold text-sm hover:scale-105 transition shadow-[0_0_20px_rgba(191,149,63,0.3)]">
+            Partner Now
+        </a>
+    </div>
+</nav>
+
+<section id="home" class="relative h-screen flex items-center overflow-hidden pt-20">
+    <div class="absolute inset-0 z-0">
+        <img src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?q=80&w=2000" class="w-full h-full object-cover animate-kenburns" alt="Trucking">
+        <div class="absolute inset-0 bg-gradient-to-r from-black via-black/90 to-black/40"></div>
+    </div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-6 w-full text-center md:text-left">
+        <div class="max-w-3xl space-y-6">
+            <div class="flex items-center gap-3 text-amber-500 font-bold tracking-[0.4em] text-[10px] uppercase">
+                <span class="w-12 h-[1px] bg-amber-500"></span> Elite Fleet Coordination
+            </div>
+            <h1 class="text-6xl lg:text-9xl font-black leading-tight text-white">
+                Global Truck <br> <span class="gold-gradient-text leading-[1]">Dispatching.</span>
+            </h1>
+            <p class="text-gray-400 text-lg md:text-xl border-l-2 md:border-l-4 border-amber-600 pl-6 max-w-lg">
+                 behand paperwork. drive. treat your fleet like ours. maximum RPM (Revenue Per Mile) across USA & Pakistan.
+            </p>
+            <div class="pt-6 flex flex-wrap gap-4 justify-center md:justify-start">
+                <button onclick="document.getElementById('expertise').scrollIntoView()" class="bg-white text-black px-8 py-4 rounded-xl font-bold hover:bg-amber-400 transition">View Expertise</button>
+                <a href="#dashboard" class="glass-card border border-white/10 px-8 py-4 rounded-xl font-bold text-white hover:bg-white/5 transition flex items-center gap-2">
+                    <i class="fas fa-satellite-dish text-amber-500"></i> Live Operations
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="expertise" class="py-32 bg-[#080808]">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="mb-16 text-center md:text-left">
+            <h2 class="text-4xl font-bold mb-4 text-white">Core <span class="gold-gradient-text">Expertise</span></h2>
+            <div class="h-1 w-20 bg-amber-600 mx-auto md:mx-0"></div>
+        </div>
+
+        <div class="grid lg:grid-cols-12 gap-10">
+            <div class="lg:col-span-4 flex flex-col space-y-4">
+                <button onclick="openExpertise(event, 'dispatch')" class="tab-btn active text-left p-6 border border-white/5 rounded-2xl transition-all flex items-center gap-4">
+                    <i class="fas fa-map-location text-amber-500 text-xl"></i>
+                    <span class="text-lg font-bold">24/7 Dispatching</span>
+                </button>
+                <button onclick="openExpertise(event, 'freight')" class="tab-btn text-left p-6 border border-white/5 rounded-2xl transition-all flex items-center gap-4">
+                    <i class="fas fa-boxes-stacked text-amber-500 text-xl"></i>
+                    <span class="text-lg font-bold">Freight Brokerage</span>
+                </button>
+                <button onclick="openExpertise(event, 'recruitment')" class="tab-btn text-left p-6 border border-white/5 rounded-2xl transition-all flex items-center gap-4">
+                    <i class="fas fa-user-check text-amber-500 text-xl"></i>
+                    <span class="text-lg font-bold">Driver Recruitment</span>
+                </button>
+            </div>
+
+            <div class="lg:col-span-8 glass-card rounded-3xl p-10 md:p-16 relative overflow-hidden">
+                <div id="dispatch" class="tab-content active">
+                    <h3 class="text-3xl font-bold mb-6 text-white">Route Optimization & Planning</h3>
+                    <p class="text-gray-400 text-lg leading-relaxed mb-8">
+                        Our specialized dispatchers use AI-driven route heatmaps to find the highest-paying loads in the USA and Pakistan markets. No forced dispatch, full support.
+                    </p>
+                    <ul class="grid md:grid-cols-2 gap-4 text-sm text-gray-300">
+                        <li><i class="fas fa-check-circle text-amber-500 mr-2"></i> Dedicated Dispatcher</li>
+                        <li><i class="fas fa-check-circle text-amber-500 mr-2"></i> No Forced Dispatch</li>
+                        <li><i class="fas fa-check-circle text-amber-500 mr-2"></i> Factoring Assistance</li>
+                        <li><i class="fas fa-check-circle text-amber-500 mr-2"></i> 24/7 Road Support</li>
+                    </ul>
+                </div>
+
+                <div id="freight" class="tab-content">
+                    <h3 class="text-3xl font-bold mb-6 text-white">Seamless Brokerage Solutions</h3>
+                    <p class="text-gray-400 text-lg leading-relaxed mb-8">
+                        Connecting shippers with vetted carriers. We ensure safety, transparency, and timely payments. We moved over 5,000 loads in 2025.
+                    </p>
+                    <button class="gold-bg text-black px-6 py-2 rounded font-bold">Submit a Quote</button>
+                </div>
+
+                <div id="recruitment" class="tab-content">
+                    <h3 class="text-3xl font-bold mb-6 text-white">Driver Recruitment</h3>
+                    <p class="text-gray-400 text-lg leading-relaxed mb-8"> We help carriers scale quickly by headhunting skilled, verified drivers with clean MVRs.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="dashboard" class="py-24 bg-[#0a0a0a] border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-bold mb-4 text-white">Live <span class="gold-gradient-text">Operations</span></h2>
+            <p class="text-gray-500">Calculate rates and track active shipments.</p>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-10">
+            <div class="glass-card p-10 rounded-3xl border border-amber-500/20">
+                <h3 class="text-xl font-bold text-white mb-6 flex items-center gap-3">
+                    <i class="fas fa-calculator text-amber-500"></i> Instant Rate Calculator
+                </h3>
+                <div class="space-y-4">
+                    <select id="truckType" class="w-full bg-black border border-white/10 rounded-xl p-4 text-white focus:border-amber-500 outline-none">
+                        <option value="2.5">Dry Van ($2.50/mi)</option>
+                        <option value="3.5">Reefer ($3.50/mi)</option>
+                        <option value="4.0">Flatbed ($4.00/mi)</option>
+                    </select>
+                    <input type="number" id="miles" placeholder="Enter Total Miles" class="w-full bg-black border border-white/10 rounded-xl p-4 text-white focus:border-amber-500 outline-none">
+                    <button onclick="calculateRate()" class="w-full gold-bg text-black font-black py-4 rounded-xl uppercase tracking-widest transition hover:opacity-90">Calculate Gross Quote</button>
+                    <div id="resDiv" class="hidden mt-6 p-6 bg-amber-500/10 rounded-xl border border-amber-500/30 text-center">
+                        <p class="text-xs uppercase text-gray-400 mb-1">Estimated total revenue</p>
+                        <h4 id="price" class="text-5xl font-black gold-gradient-text">$0.00</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="glass-card p-10 rounded-3xl border border-amber-500/20">
+                <h3 class="text-xl font-bold text-white mb-6 flex items-center gap-3">
+                    <i class="fas fa-map-marker-alt text-amber-500"></i> Status Tracker
+                </h3>
+                <div class="space-y-6">
+                    <div class="flex gap-2">
+                        <input type="text" id="loadId" placeholder="Enter Load ID (e.g. VH-786)" class="flex-1 bg-black border border-white/10 rounded-xl p-4 text-white outline-none focus:border-amber-500">
+                        <button onclick="trackLoad()" class="bg-white text-black font-bold px-6 rounded-xl">Track</button>
+                    </div>
+                    <div id="trackUI" class="hidden pt-6 border-t border-white/5 space-y-6">
+                        <div class="flex justify-between text-[10px] font-black uppercase text-gray-500">
+                            <span id="s1" class="text-amber-500">Processing</span>
+                            <span id="s2">In-Transit</span>
+                            <span id="s3">Delivered</span>
+                        </div>
+                        <div class="h-1.5 w-full bg-white/5 rounded-full relative">
+                            <div id="bar" class="absolute top-0 left-0 h-full gold-bg rounded-full transition-all duration-1000" style="width: 33%"></div>
+                        </div>
+                        <div class="text-sm text-gray-400">Current Status: <span class="text-white font-bold" id="statusText">Processing Order...</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="py-12 border-t border-white/5 bg-black">
+    <div class="max-w-7xl mx-auto px-6 text-center text-gray-600">
+        <div class="flex justify-center space-x-6 mb-8 text-2xl">
+            <a href="https://wa.me/03099790700" class="hover:text-amber-500"><i class="fab fa-whatsapp"></i></a>
+            <a href="#" class="hover:text-amber-500"><i class="fab fa-linkedin"></i></a>
+            <a href="mailto:info@sotoverafamily.com" class="hover:text-amber-500"><i class="fas fa-envelope"></i></a>
+        </div>
+        <p class="text-sm">© 2026 SotoVera Family Dispatch LLC. Elite Global Standards.</p>
+    </div>
+</footer>
+
+<script>
+    // Tab Functionality
+    function openExpertise(evt, serviceName) {
+        let contents = document.getElementsByClassName("tab-content");
+        for (let c of contents) c.style.display = "none";
+        let btns = document.getElementsByClassName("tab-btn");
+        for (let b of btns) b.classList.remove("active");
+        document.getElementById(serviceName).style.display = "block";
+        evt.currentTarget.classList.add("active");
+    }
+
+    // Rate Calculator Logic
+    function calculateRate() {
+        const rate = parseFloat(document.getElementById('truckType').value);
+        const mi = parseFloat(document.getElementById('miles').value);
+        if(mi > 0) {
+            const total = (rate * mi).toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+            document.getElementById('price').innerText = total;
+            document.getElementById('resDiv').classList.remove('hidden');
+        } else { alert("Please enter valid mileage"); }
+    }
+
+    // Mock Tracker Logic
+    function trackLoad() {
+        const id = document.getElementById('loadId').value;
+        if(id.length > 2) {
+            document.getElementById('trackUI').classList.remove('hidden');
+            document.getElementById('statusText').innerText = "Load Picked Up - In Transit";
+            setTimeout(() => {
+                document.getElementById('bar').style.width = "66%";
+                document.getElementById('s2').classList.add('text-amber-500');
+            }, 300);
+        } else { alert("Invalid ID"); }
+    }
+</script>
+
+</body>
+</html>
