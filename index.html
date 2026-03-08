@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SotoVera Family | Enterprise Dispatch Terminal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;700;800&family=Orbitron:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        :root { --vision-blue: #0a469b; --vision-dark: #050a12; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background: #ffffff; overflow-x: hidden; scroll-behavior: smooth; }
+        
+        /* Premium Background Layers */
+        .hero-parallax { 
+            background: linear-gradient(rgba(10, 70, 155, 0.75), rgba(5, 10, 18, 0.9)), 
+                        url('https://images.unsplash.com/photo-1501700489910-fb3a7eba0d73?q=80&w=2000'); 
+            background-size: cover; background-attachment: fixed; background-position: center;
+        }
+
+        /* Glassmorphism Navigation */
+        .glass-nav { background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(15px); border-bottom: 1px solid rgba(0,0,0,0.05); }
+
+        /* Interactive Service Cards (Flip) */
+        .service-card { perspective: 1000px; height: 320px; cursor: pointer; }
+        .card-inner { position: relative; width: 100%; height: 100%; transition: transform 0.8s; transform-style: preserve-3d; }
+        .service-card:hover .card-inner { transform: rotateY(180deg); }
+        .card-front, .card-back { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: 24px; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 2rem; }
+        .card-front { background: #f8fafc; border: 1px solid rgba(10, 46, 155, 0.05); }
+        .card-back { background: var(--vision-blue); color: white; transform: rotateY(180deg); }
+
+        /* Glowing Buttons */
+        .btn-glow { box-shadow: 0 0 20px rgba(10, 70, 155, 0.3); transition: all 0.3s ease; }
+        .btn-glow:hover { box-shadow: 0 0 35px rgba(10, 70, 155, 0.5); transform: translateY(-3px); }
+
+        /* Chart Container */
+        .chart-box { background: white; border-radius: 30px; border: 1px solid rgba(0,0,0,0.05); box-shadow: 0 25px 50px -12px rgba(0,0,0,0.08); }
+    </style>
+</head>
+<body>
+
+<div class="hidden md:flex bg-[#050a12] text-white py-2.5 px-20 justify-between items-center text-[10px] font-bold tracking-[2px] uppercase">
+    <div class="flex gap-8">
+        <span><i class="fas fa-phone-alt text-blue-400 mr-2"></i> +92 309 9790700</span>
+        <span><i class="fas fa-map-marker-alt text-blue-400 mr-2"></i> Dera Ismail Khan, PK</span>
+    </div>
+    <div class="flex gap-5">
+        <a href="#" class="hover:text-blue-400"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://wa.me/923099790700" class="hover:text-green-400"><i class="fab fa-whatsapp"></i></a>
+    </div>
+</div>
+
+<nav class="glass-nav sticky top-0 z-[1000] py-4 px-6 md:px-20 flex justify-between items-center">
+    <div class="flex items-center gap-3">
+        <div class="w-11 h-11 bg-[#0a469b] text-white flex items-center justify-center font-black text-2xl italic rounded-xl shadow-lg">S</div>
+        <div class="leading-none">
+            <span class="text-xl font-black tracking-tighter text-slate-900 block uppercase">SotoVera</span>
+            <span class="text-[10px] font-bold text-blue-700 tracking-[3px] uppercase">Family LLC</span>
+        </div>
+    </div>
+    <div class="hidden lg:flex gap-10 text-[11px] font-extrabold uppercase text-slate-500 tracking-widest">
+        <a href="#operational" class="hover:text-blue-800 transition">Excellence</a>
+        <a href="#market" class="hover:text-blue-800 transition">Market Trends</a>
+        <a href="#calc" class="hover:text-blue-800 transition">RPM Tool</a>
+    </div>
+    <button onclick="sendWA('General Inquiry')" class="btn-glow bg-[#0a469b] text-white px-8 py-3 rounded-full text-[10px] font-black uppercase tracking-widest">Contact Hub</button>
+</nav>
+
+<section class="hero-parallax min-h-[90vh] flex items-center px-6 md:px-20">
+    <div class="max-w-4xl" data-aos="fade-right">
+        <h4 class="text-blue-400 font-bold uppercase tracking-[7px] text-xs mb-6">Elite Logistics Terminal</h4>
+        <h1 class="text-5xl md:text-8xl font-black text-white leading-[0.9] mb-8">MOVE WITH <br><span class="text-blue-400 italic">PRECISION.</span></h1>
+        <p class="text-lg text-slate-300 mb-12 font-light max-w-xl leading-relaxed">The premier back-office partner for owner-operators. We don't just find loads; we optimize your entire business cycle.</p>
+        <div class="flex flex-wrap gap-6">
+            <button onclick="sendWA('I am a new driver to register in your company')" class="btn-glow bg-white text-blue-900 px-12 py-5 rounded-2xl text-xs font-black uppercase tracking-widest shadow-2xl">Initialize Setup</button>
+            <button onclick="document.getElementById('operational').scrollIntoView()" class="border-2 border-white/20 text-white px-12 py-5 rounded-2xl text-xs font-black uppercase tracking-widest hover:bg-white/10 transition">Explore Excellence</button>
+        </div>
+    </div>
+</section>
+
+<section class="relative z-10 -mt-16 px-6 md:px-20">
+    <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="bg-white p-8 rounded-3xl shadow-xl border border-slate-50 text-center" data-aos="zoom-in">
+            <h3 class="text-3xl font-black text-blue-800 mb-1">240+</h3>
+            <p class="text-[9px] font-bold text-slate-400 uppercase tracking-widest">Active Carriers</p>
+        </div>
+        <div class="bg-white p-8 rounded-3xl shadow-xl border border-slate-50 text-center" data-aos="zoom-in" data-aos-delay="100">
+            <h3 class="text-3xl font-black text-blue-800 mb-1">98%</h3>
+            <p class="text-[9px] font-bold text-slate-400 uppercase tracking-widest">Load Success</p>
+        </div>
+        <div class="bg-white p-8 rounded-3xl shadow-xl border border-slate-50 text-center" data-aos="zoom-in" data-aos-delay="200">
+            <h3 class="text-3xl font-black text-blue-800 mb-1">$4.5k</h3>
+            <p class="text-[9px] font-bold text-slate-400 uppercase tracking-widest">Avg Weekly Gross</p>
+        </div>
+        <div class="bg-white p-8 rounded-3xl shadow-xl border border-slate-50 text-center" data-aos="zoom-in" data-aos-delay="300">
+            <h3 class="text-3xl font-black text-blue-800 mb-1">24/7</h3>
+            <p class="text-[9px] font-bold text-slate-400 uppercase tracking-widest">Live Support</p>
+        </div>
+    </div>
+</section>
+
+<section id="operational" class="py-32 px-6 md:px-20">
+    <div class="text-center mb-20" data-aos="fade-up">
+        <h2 class="text-4xl md:text-6xl font-black text-slate-900 mb-5">Operational <span class="text-blue-700">Excellence</span></h2>
+        <div class="w-24 h-2 bg-blue-700 mx-auto rounded-full mb-6"></div>
+        <p class="text-slate-500 font-bold uppercase tracking-widest text-[10px]">Hover or tap to explore services</p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-10 max-w-7xl mx-auto">
+        <div class="service-card" data-aos="fade-up">
+            <div class="card-inner">
+                <div class="card-front">
+                    <i class="fas fa-tachometer-alt text-5xl text-blue-700 mb-6"></i>
+                    <h3 class="text-xl font-bold uppercase tracking-tighter">Dispatching</h3>
+                </div>
+                <div class="card-back">
+                    <h4 class="font-black mb-4 uppercase text-xs tracking-widest">Load Management</h4>
+                    <p class="text-xs text-center leading-relaxed">Dedicated dispatchers, high-RPM market access, and zero forced dispatching. We find the lanes that fit your schedule.</p>
+                </div>
+            </div>
+        </div>
+        <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="card-inner">
+                <div class="card-front">
+                    <i class="fas fa-shield-check text-5xl text-blue-700 mb-6"></i>
+                    <h3 class="text-xl font-bold uppercase tracking-tighter">Compliance</h3>
+                </div>
+                <div class="card-back text-center">
+                    <h4 class="font-black mb-4 uppercase text-xs tracking-widest">Safety & DOT</h4>
+                    <p class="text-xs text-center leading-relaxed">Full ELD monitoring, DOT audit preparation, and clearinghouse management to keep you road-legal at all times.</p>
+                </div>
+            </div>
+        </div>
+        <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="card-inner">
+                <div class="card-front">
+                    <i class="fas fa-file-invoice-dollar text-5xl text-blue-700 mb-6"></i>
+                    <h3 class="text-xl font-bold uppercase tracking-tighter">Billing</h3>
+                </div>
+                <div class="card-back">
+                    <h4 class="font-black mb-4 uppercase text-xs tracking-widest">Cash Flow</h4>
+                    <p class="text-xs text-center leading-relaxed">Fast-pass factoring, immediate invoicing, and weekly revenue reports. No more chasing brokers for your money.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="market" class="py-24 px-6 md:px-20 bg-slate-50">
+    <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+        <div class="chart-box p-10" data-aos="fade-right">
+            <h3 class="text-xl font-black mb-2 uppercase tracking-tight">Market Rate <span class="text-blue-700">Analytics</span></h3>
+            <p class="text-[10px] font-bold text-slate-400 uppercase tracking-[3px] mb-8">Average RPM Index (Weekly)</p>
+            <canvas id="marketChart" height="200"></canvas>
+        </div>
+
+        <div id="calc" class="bg-[#0a469b] rounded-[40px] p-10 md:p-16 text-white shadow-2xl" data-aos="fade-left">
+            <h3 class="font-orbit text-blue-300 text-[10px] font-bold mb-10 tracking-[5px] uppercase">Revenue Estimator</h3>
+            <div class="space-y-8">
+                <div class="grid grid-cols-2 gap-6">
+                    <div class="space-y-2">
+                        <label class="text-[9px] uppercase font-black text-blue-200">Gross Load Pay ($)</label>
+                        <input type="number" id="loadVal" placeholder="4200" class="w-full bg-white/10 border-none rounded-2xl p-5 text-white outline-none focus:ring-2 ring-white/30">
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-[9px] uppercase font-black text-blue-200">Total Miles</label>
+                        <input type="number" id="loadDist" placeholder="1050" class="w-full bg-white/10 border-none rounded-2xl p-5 text-white outline-none focus:ring-2 ring-white/30">
+                    </div>
+                </div>
+                <button onclick="calculateRPM()" class="w-full bg-white text-blue-900 py-6 rounded-2xl font-black text-xs uppercase tracking-widest shadow-xl hover:bg-slate-100 transition">Calculate Potential</button>
+                <div class="mt-4 p-8 bg-black/20 rounded-3xl border border-white/5 text-center">
+                    <p class="text-[9px] text-blue-300 uppercase font-black mb-2">Estimated Rate Per Mile</p>
+                    <h4 id="rpmOut" class="text-6xl font-black">$0.00</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="hero-parallax py-32 px-6 md:px-20 text-white text-center">
+    <div class="max-w-4xl mx-auto" data-aos="fade-up">
+        <h2 class="text-4xl font-black mb-16">The <span class="text-blue-400">Driver's</span> Choice</h2>
+        <div class="grid md:grid-cols-2 gap-10">
+            <div class="bg-white/10 backdrop-blur-md p-10 rounded-3xl border border-white/10 text-left">
+                <div class="text-yellow-400 text-xs mb-6"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <p class="text-sm italic mb-8 leading-relaxed">"SotoVera Family changed my business. Their dispatching team is elite and always finds the best lanes."</p>
+                <div class="flex items-center gap-4"><div class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center font-bold">AK</div><span class="text-[10px] font-black uppercase tracking-widest">Alex K. (Owner-Op)</span></div>
+            </div>
+            <div class="bg-white/10 backdrop-blur-md p-10 rounded-3xl border border-white/10 text-left">
+                <div class="text-yellow-400 text-xs mb-6"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <p class="text-sm italic mb-8 leading-relaxed">"Transparency and fast billing. I never have to chase paperwork anymore."</p>
+                <div class="flex items-center gap-4"><div class="w-10 h-10 bg-indigo-600 rounded-full flex items-center justify-center font-bold">SM</div><span class="text-[10px] font-black uppercase tracking-widest">Sarah M. (Fleet Owner)</span></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="py-20 bg-white text-center">
+    <div class="text-3xl font-black mb-4 tracking-tighter uppercase">SOTOVERA <span class="text-blue-700">FAMILY</span></div>
+    <div class="flex justify-center gap-8 mb-10 text-xl text-slate-300">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://wa.me/923099790700"><i class="fab fa-whatsapp"></i></a>
+    </div>
+    <p class="text-[9px] text-slate-400 font-bold tracking-[1.5em] uppercase">Enterprise Logistics Terminal © 2026</p>
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init({ duration: 1000, once: true });
+
+    function sendWA(msg) {
+        window.open(`https://wa.me/923099790700?text=${encodeURIComponent(msg)}`, '_blank');
+    }
+
+    function calculateRPM() {
+        const val = document.getElementById('loadVal').value;
+        const dist = document.getElementById('loadDist').value;
+        if(val && dist > 0) {
+            document.getElementById('rpmOut').innerText = "$" + (val / dist).toFixed(2);
+        }
+    }
+
+    // Interactive Market Chart
+    const ctx = document.getElementById('marketChart').getContext('2d');
+    new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+            datasets: [{
+                label: 'Market RPM Avg',
+                data: [2.88, 3.12, 3.01, 3.45, 3.20, 3.58],
+                borderColor: '#0a469b',
+                backgroundColor: 'rgba(10, 70, 155, 0.1)',
+                fill: true,
+                tension: 0.4,
+                pointRadius: 6,
+                pointBackgroundColor: '#0a469b'
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: { legend: { display: false } },
+            scales: { 
+                y: { grid: { display: false }, ticks: { callback: v => '$' + v } },
+                x: { grid: { display: false } }
+            }
+        }
+    });
+</script>
+
+</body>
+</html>
