@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SotoVera Family | Enterprise Dispatch Terminal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;700;800&family=Orbitron:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        :root { --vision-blue: #0a469b; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background: #ffffff; scroll-behavior: smooth; }
+        
+        /* Hero Parallax */
+        .hero-bg { 
+            background: linear-gradient(rgba(10, 70, 155, 0.7), rgba(5, 10, 18, 0.9)), 
+                        url('https://images.unsplash.com/photo-1501700489910-fb3a7eba0d73?q=80&w=2000'); 
+            background-size: cover; background-attachment: fixed; background-position: center;
+        }
+
+        /* Glass Nav */
+        .glass-nav { background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(15px); border-bottom: 1px solid rgba(0,0,0,0.05); }
+
+        /* Flip Card Logic */
+        .service-card { perspective: 1000px; height: 320px; cursor: pointer; }
+        .card-inner { position: relative; width: 100%; height: 100%; transition: transform 0.8s; transform-style: preserve-3d; }
+        .service-card:hover .card-inner { transform: rotateY(180deg); }
+        .card-front, .card-back { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: 24px; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 2rem; }
+        .card-front { background: #f8fafc; border: 1px solid rgba(10, 46, 155, 0.1); }
+        .card-back { background: var(--vision-blue); color: white; transform: rotateY(180deg); text-align: center; }
+
+        .btn-glow { box-shadow: 0 10px 25px rgba(10, 70, 155, 0.3); transition: all 0.3s; }
+        .btn-glow:hover { transform: translateY(-3px); box-shadow: 0 15px 35px rgba(10, 70, 155, 0.5); }
+    </style>
+</head>
+<body>
+
+<nav class="glass-nav sticky top-0 z-[1000] py-4 px-6 md:px-20 flex justify-between items-center">
+    <div class="flex items-center gap-3">
+        <div class="w-11 h-11 bg-[#0a469b] text-white flex items-center justify-center font-black text-2xl italic rounded-xl">S</div>
+        <div class="leading-none">
+            <span class="text-xl font-black text-slate-900 block uppercase tracking-tighter">SotoVera</span>
+            <span class="text-[10px] font-bold text-blue-700 tracking-[3px] uppercase">Family LLC</span>
+        </div>
+    </div>
+    <button onclick="sendWA('General Inquiry')" class="btn-glow bg-[#0a469b] text-white px-8 py-2.5 rounded-full text-[10px] font-black uppercase tracking-widest">Contact Hub</button>
+</nav>
+
+<section class="hero-bg min-h-[85vh] flex items-center px-6 md:px-20">
+    <div class="max-w-4xl" data-aos="fade-right">
+        <h4 class="text-blue-400 font-bold uppercase tracking-[7px] text-xs mb-6">Elite Logistics Terminal</h4>
+        <h1 class="text-5xl md:text-8xl font-black text-white leading-[0.9] mb-8">DRIVE WITH <br><span class="text-blue-400 italic">PRECISION.</span></h1>
+        <p class="text-lg text-slate-300 mb-12 font-light max-w-xl">Premium back-office support and high-RPM dispatching for elite owner-operators.</p>
+        <div class="flex flex-wrap gap-6">
+            <button onclick="sendWA('I am a new driver to register in your company')" class="btn-glow bg-white text-blue-900 px-12 py-5 rounded-2xl text-xs font-black uppercase tracking-widest shadow-2xl">Initialize Setup</button>
+        </div>
+    </div>
+</section>
+
+<section id="operational" class="py-32 px-6 md:px-20">
+    <div class="text-center mb-20" data-aos="fade-up">
+        <h2 class="text-4xl md:text-6xl font-black text-slate-900 mb-5">Operational <span class="text-blue-700">Excellence</span></h2>
+        <p class="text-slate-400 font-bold uppercase tracking-widest text-[10px]">Hover to see our core terminal features</p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-10 max-w-7xl mx-auto">
+        <div class="service-card" data-aos="zoom-in">
+            <div class="card-inner">
+                <div class="card-front">
+                    <i class="fas fa-route text-5xl text-blue-700 mb-6"></i>
+                    <h3 class="text-xl font-bold uppercase tracking-tighter">Dispatching</h3>
+                </div>
+                <div class="card-back">
+                    <h4 class="font-black mb-4 uppercase text-xs">Load Strategy</h4>
+                    <p class="text-xs leading-relaxed">Access to premium brokers, 24/7 route planning, and zero forced dispatching policies.</p>
+                </div>
+            </div>
+        </div>
+        <div class="service-card" data-aos="zoom-in" data-aos-delay="200">
+            <div class="card-inner">
+                <div class="card-front">
+                    <i class="fas fa-shield-check text-5xl text-blue-700 mb-6"></i>
+                    <h3 class="text-xl font-bold uppercase tracking-tighter">Compliance</h3>
+                </div>
+                <div class="card-back">
+                    <h4 class="font-black mb-4 uppercase text-xs">Safety First</h4>
+                    <p class="text-xs leading-relaxed">Full ELD monitoring, DOT audit support, and proactive safety management for your fleet.</p>
+                </div>
+            </div>
+        </div>
+        <div class="service-card" data-aos="zoom-in" data-aos-delay="400">
+            <div class="card-inner">
+                <div class="card-front">
+                    <i class="fas fa-file-invoice-dollar text-5xl text-blue-700 mb-6"></i>
+                    <h3 class="text-xl font-bold uppercase tracking-tighter">Billing</h3>
+                </div>
+                <div class="card-back">
+                    <h4 class="font-black mb-4 uppercase text-xs">Fast Cash Flow</h4>
+                    <p class="text-xs leading-relaxed">Rapid invoicing and factoring support to ensure your revenue hits your bank faster.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-24 px-6 md:px-20 bg-slate-50">
+    <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+        <div class="bg-white p-10 rounded-[40px] shadow-2xl" data-aos="fade-right">
+            <h3 class="text-xl font-black mb-8 uppercase tracking-tight">Market <span class="text-blue-700">Trend Index</span></h3>
+            <canvas id="marketChart" height="200"></canvas>
+        </div>
+
+        <div class="bg-[#0a469b] rounded-[40px] p-12 text-white shadow-2xl" data-aos="fade-left">
+            <h3 class="font-orbit text-blue-300 text-[10px] font-bold mb-10 tracking-[5px] uppercase">RPM Estimator</h3>
+            <div class="space-y-6">
+                <input type="number" id="loadVal" placeholder="Load Value ($)" class="w-full bg-white/10 rounded-2xl p-5 text-white outline-none">
+                <input type="number" id="loadDist" placeholder="Total Miles" class="w-full bg-white/10 rounded-2xl p-5 text-white outline-none">
+                <button onclick="calculateRPM()" class="w-full bg-white text-blue-900 py-6 rounded-2xl font-black text-xs uppercase tracking-widest">Calculate Output</button>
+                <div class="text-center p-6 bg-black/20 rounded-2xl">
+                    <p class="text-[10px] text-blue-300 uppercase font-black mb-1">Estimated RPM</p>
+                    <h4 id="rpmOut" class="text-5xl font-black">$0.00</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="py-20 bg-white text-center border-t border-slate-100">
+    <div class="text-3xl font-black mb-6 tracking-tighter uppercase">SOTOVERA <span class="text-blue-700">FAMILY</span></div>
+    <p class="text-[9px] text-slate-400 font-bold tracking-[1.5em] uppercase mb-10">Professional Logistics Terminal © 2026</p>
+    <div class="flex justify-center gap-8 text-2xl text-slate-300">
+        <a href="https://wa.me/923099790700"><i class="fab fa-whatsapp"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+    </div>
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init({ duration: 1000, once: true });
+    function sendWA(msg) { window.open(`https://wa.me/923099790700?text=${encodeURIComponent(msg)}`, '_blank'); }
+    function calculateRPM() {
+        const val = document.getElementById('loadVal').value;
+        const dist = document.getElementById('loadDist').value;
+        if(val && dist > 0) { document.getElementById('rpmOut').innerText = "$" + (val / dist).toFixed(2); }
+    }
+    const ctx = document.getElementById('marketChart').getContext('2d');
+    new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+            datasets: [{
+                label: 'Market RPM',
+                data: [2.90, 3.15, 3.05, 3.50, 3.30, 3.65],
+                borderColor: '#0a469b',
+                backgroundColor: 'rgba(10, 70, 155, 0.1)',
+                fill: true,
+                tension: 0.4
+            }]
+        },
+        options: { plugins: { legend: { display: false } } }
+    });
+</script>
+</body>
+</html>
